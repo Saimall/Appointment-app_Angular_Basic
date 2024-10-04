@@ -1,0 +1,60 @@
+<!-- <div>
+    <input [(ngModel)]="newAppointmentTitle" placeholder="Appointment Title">
+    <input [(ngModel)]="newAppointmentDate" type="date" placeholder="Appointment Date">
+
+    <button (click)="addAppointment()">Add</button>
+
+
+
+   
+
+</div> -->
+
+<h1 class="text-center mb-4 p-3 bg-secondary text-white">Appointment Managing System</h1>
+<div class="container  ">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+            <div class="mb-3">
+              <label for="appointmentTitle" class="form-label">Title</label>
+              <input [(ngModel)]="newAppointmentTitle" id="appointmentTitle" class="form-control" placeholder="Appointment Title" required>
+            </div>
+            <div class="mb-3">
+              <label for="appointmentDate" class="form-label">Date</label>
+              <input [(ngModel)]="newAppointmentDate" id="appointmentDate" type="date" class="form-control" required>
+            </div>
+            <button (click)="addAppointment()" type="button" class="btn btn-outline-primary w-100">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="text-center mb-3 p-3">
+  <h1>Appointment List</h1>
+</div>
+<div class="container p-2 ">
+  <table class="table ">
+    <thead>
+      <tr class="border-none">
+        <th scope="col">Title</th>
+        <th scope="col">Date</th>
+        <th scope="col" class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+      <tr  class="border-none"*ngFor="let app of appointment">
+        <td>{{app.title}}</td>
+        <td> {{app.date}}</td>
+        <td class="text-center">
+          <button (click)="deleteappointment(app.id)" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+      <!-- Additional rows would go here -->
+    </tbody>
+  </table>
+</div>
+
